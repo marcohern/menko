@@ -1,0 +1,22 @@
+{
+    "name": "marcohern/menko",
+    "description": "Scrapper",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Marcohern\\Menko\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marco Hernandez",
+            "email": "marcohern@gmail.com"
+        }
+    ],
+    "require": {
+        "fabpot/goutte": "^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}

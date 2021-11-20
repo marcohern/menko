@@ -1,0 +1,5 @@
+/.phpunit.result.cache
+/page.json
+/page.txt
+/test.php
+/vendor
