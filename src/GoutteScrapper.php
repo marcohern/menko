@@ -8,8 +8,8 @@ class GoutteScrapper extends ScrapperBase {
     protected $goutte = null;
     protected $crawler = null;
 
-    public function __construct() {
-        $this->goutte = new Goutte();
+    public function __construct($goutte=null) {
+        $this->goutte = empty($goutte) ? new Goutte() : $goutte;
     }
 
     public function scrap(string $url) : array

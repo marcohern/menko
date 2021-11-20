@@ -8,9 +8,8 @@ class MercadoLibreProductListScrapper extends MercadoLibreBaseScrapper {
     public function scrap(string $url): array
     {
         parent::scrap($url);
-        $r = $this->scrapPreloadedState();
-        echo $r;
-        return [];
+        $json = $this->scrapPreloadedState();
+        return $this->parsePreloadedState($json);
     }
 
     protected function scrapPreloadedState() {
@@ -18,6 +17,11 @@ class MercadoLibreProductListScrapper extends MercadoLibreBaseScrapper {
         $m = null;
         preg_match('/window.__PRELOADED_STATE__\s*=\s*({.*});\s*}},{s:/', $html, $m);
         return $m[1];
+    }
+
+    protected function parsePreloadedState(string &$json): array
+    {
+        return [json_decode($json)];
     }
 
 }

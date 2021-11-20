@@ -7,8 +7,9 @@ use Marcohern\Menko\Hyperlink;
 
 class MercadoLibreBaseScrapper extends GoutteScrapper {
 
-    public function __construct() {
-        parent::__construct();
+    public function __construct($goutte = null)
+    {
+        parent::__construct($goutte);
     }
 
     public function scrapJson(string $url): mixed
